@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunshine Surveyors | Drone Mapping, Topographic & Construction Set-Out Surveys | Brimbank & Western Melbourne</title>
+<meta name="description" content="Fast, local drone mapping, topographic surveys, and construction set-out/staking across Brimbank and Melbourne's western suburbs. Quotes within 24 hours.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Sunshine Surveyors",
+  "alternateName": "Brimbank Spatial",
+  "description": "Drone mapping, topographic survey, and construction set-out/as-built services across Brimbank and Melbourne's western suburbs.",
+  "areaServed": ["Sunshine", "St Albans", "Deer Park", "Sydenham", "Keilor", "Cairnlea", "Delahey", "Ravenhall", "Caroline Springs", "Sunshine North", "Sunshine West", "Derrimut", "Ardeer", "Albion", "Keilor Downs", "Keilor Park", "Kealba", "Kings Park", "Taylors Lakes", "Albanvale", "Hillside"],
+  "address": { "@type": "PostalAddress", "addressLocality": "Brimbank", "addressRegion": "VIC", "addressCountry": "AU" },
+  "telephone": "+61 494 725 014",
+  "email": "info@sunshinesurveyors.com.au",
+  "priceRange": "$$"
+}
+</script>
+<style>
+  :root {
+    --sun-yellow: #F5A623;
+    --sun-orange: #E8791A;
+    --sky-blue: #1B4F72;
+    --sky-light: #EAF3FA;
+    --charcoal: #232323;
+    --grey: #6B7280;
+    --white: #FFFFFF;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: var(--charcoal);
+    line-height: 1.6;
+    background: var(--white);
+  }
+  a { text-decoration: none; color: inherit; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+  /* Top bar */
+  .topbar {
+    background: var(--sky-blue); color: white; font-size: 13px;
+    padding: 8px 24px; text-align: center;
+  }
+  .topbar a { color: var(--sun-yellow); font-weight: 700; }
+  .topbar .hours { color: #cfe0ec; margin-left: 10px; }
+
+  /* Header */
+  header {
+    background: var(--white);
+    border-bottom: 1px solid #eee;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .nav-wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 24px; max-width: 1100px; margin: 0 auto;
+  }
+  .logo { font-size: 22px; font-weight: 800; color: var(--sky-blue); }
+  .logo span { color: var(--sun-orange); }
+  nav ul { list-style: none; display: flex; gap: 28px; }
+  nav a { font-weight: 600; font-size: 15px; color: var(--charcoal); }
+  nav a:hover { color: var(--sun-orange); }
+  .nav-phone { font-weight: 700; color: var(--sky-blue); margin-right: 16px; }
+  .nav-cta {
+    background: var(--sun-orange); color: white !important; padding: 10px 20px;
+    border-radius: 6px; font-weight: 700;
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, var(--sky-blue) 0%, #123249 100%);
+    color: white; padding: 80px 24px 90px;
+  }
+  .hero-inner { max-width: 1100px; margin: 0 auto; display: flex; gap: 48px; align-items: center; flex-wrap: wrap; }
+  .hero-text { flex: 1 1 480px; }
+  .hero-badge {
+    display: inline-block; background: rgba(245,166,35,0.15); color: var(--sun-yellow);
+    padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 700;
+    letter-spacing: 0.3px; margin-bottom: 18px; border: 1px solid rgba(245,166,35,0.4);
+  }
+  .hero h1 { font-size: 40px; line-height: 1.2; margin-bottom: 18px; }
+  .hero p.sub { font-size: 18px; color: #cfe0ec; margin-bottom: 28px; max-width: 520px; }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--sun-orange); color: white; padding: 14px 28px; border-radius: 8px;
+    font-weight: 700; font-size: 16px; display: inline-block; border: none; cursor: pointer;
+  }
+  .btn-secondary {
+    background: transparent; color: white; padding: 14px 28px; border-radius: 8px;
+    font-weight: 700; font-size: 16px; border: 2px solid rgba(255,255,255,0.4);
+  }
+  .hero-stats { flex: 1 1 320px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .stat-card {
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 10px; padding: 20px;
+  }
+  .stat-card .num { font-size: 28px; font-weight: 800; color: var(--sun-yellow); }
+  .stat-card .label { font-size: 13px; color: #cfe0ec; margin-top: 4px; }
+
+  /* Trust bar */
+  .trust-bar {
+    background: var(--sky-light); padding: 18px 24px; text-align: center;
+    font-size: 14px; color: var(--sky-blue); font-weight: 600;
+  }
+
+  /* Services */
+  .section { padding: 70px 24px; }
+  .section-header { text-align: center; max-width: 640px; margin: 0 auto 48px; }
+  .section-header .eyebrow {
+    color: var(--sun-orange); font-weight: 700; font-size: 14px; letter-spacing: 0.5px;
+    text-transform: uppercase; margin-bottom: 10px;
+  }
+  .section-header h2 { font-size: 32px; margin-bottom: 12px; color: var(--sky-blue); }
+  .section-header p { color: var(--grey); font-size: 16px; }
+
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .service-card {
+    border: 1px solid #e5e7eb; border-radius: 12px; padding: 30px 26px;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .service-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.08); transform: translateY(-3px); }
+  .service-icon {
+    width: 52px; height: 52px; border-radius: 10px; background: var(--sky-light);
+    display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 16px;
+  }
+  .service-card h3 { font-size: 19px; margin-bottom: 10px; color: var(--charcoal); }
+  .service-card p { color: var(--grey); font-size: 14.5px; margin-bottom: 14px; }
+  .service-card ul { list-style: none; font-size: 14px; color: var(--charcoal); }
+  .service-card li { padding: 4px 0; padding-left: 20px; position: relative; }
+  .service-card li::before {
+    content: "✓"; position: absolute; left: 0; color: var(--sun-orange); font-weight: 800;
+  }
+
+  /* Not-offered note */
+  .scope-note {
+    background: var(--sky-light); border-left: 4px solid var(--sky-blue);
+    padding: 18px 22px; border-radius: 8px; font-size: 14.5px; color: var(--charcoal); margin-top: 32px;
+  }
+  .scope-note strong { color: var(--sky-blue); }
+
+  /* How it works */
+  .how-it-works { background: #FAFAFA; }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .step { text-align: center; }
+  .step-num {
+    width: 44px; height: 44px; border-radius: 50%; background: var(--sun-orange); color: white;
+    display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px;
+    margin: 0 auto 16px;
+  }
+  .step h4 { font-size: 16px; margin-bottom: 8px; }
+  .step p { color: var(--grey); font-size: 14px; }
+
+  /* Service area */
+  .area-section .container { display: flex; gap: 48px; align-items: center; flex-wrap: wrap; }
+  .area-text { flex: 1 1 400px; }
+  .area-list { flex: 1 1 320px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .area-chip {
+    background: var(--sky-light); color: var(--sky-blue); padding: 8px 16px;
+    border-radius: 20px; font-size: 14px; font-weight: 600;
+  }
+
+  /* Why us */
+  .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .why-item { display: flex; gap: 16px; padding: 20px; }
+  .why-icon { font-size: 24px; }
+  .why-item h4 { font-size: 16px; margin-bottom: 6px; }
+  .why-item p { color: var(--grey); font-size: 14.5px; }
+
+  /* Quote form */
+  .quote-section { background: var(--sky-blue); color: white; }
+  .quote-wrap { display: flex; gap: 48px; flex-wrap: wrap; }
+  .quote-info { flex: 1 1 380px; }
+  .quote-info h2 { font-size: 30px; margin-bottom: 16px; }
+  .quote-info p { color: #cfe0ec; margin-bottom: 24px; }
+  .contact-row { display: flex; gap: 12px; align-items: center; margin-bottom: 14px; font-size: 15px; }
+  .quote-form {
+    flex: 1 1 420px; background: white; color: var(--charcoal); border-radius: 12px; padding: 32px;
+  }
+  .quote-form h3 { margin-bottom: 18px; color: var(--sky-blue); }
+  .form-row { margin-bottom: 14px; }
+  .form-row label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; color: var(--charcoal); }
+  .form-row input, .form-row select, .form-row textarea {
+    width: 100%; padding: 11px 12px; border: 1px solid #ddd; border-radius: 7px; font-size: 14px; font-family: inherit;
+  }
+  .form-row textarea { resize: vertical; min-height: 80px; }
+  .form-submit {
+    width: 100%; background: var(--sun-orange); color: white; padding: 13px; border: none;
+    border-radius: 7px; font-weight: 700; font-size: 15px; cursor: pointer; margin-top: 6px;
+  }
+  .form-note { font-size: 12px; color: var(--grey); margin-top: 10px; text-align: center; }
+  .form-secure { font-size: 11.5px; color: #9CA3AF; margin-top: 6px; text-align: center; }
+
+  /* Checkbox group */
+  .checkbox-group { display: flex; flex-direction: column; gap: 8px; }
+  .checkbox-option {
+    display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 400;
+    color: var(--charcoal); cursor: pointer;
+  }
+  .checkbox-option input { width: auto; }
+
+  /* Closing CTA */
+  .closing-cta {
+    background: var(--sun-orange); color: white; text-align: center; padding: 56px 24px;
+  }
+  .closing-cta h2 { font-size: 28px; margin-bottom: 12px; }
+  .closing-cta p { color: rgba(255,255,255,0.9); margin-bottom: 24px; font-size: 16px; }
+  .closing-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn-white {
+    background: white; color: var(--sun-orange); padding: 14px 28px; border-radius: 8px;
+    font-weight: 800; font-size: 16px; display: inline-block;
+  }
+  .btn-outline-white {
+    background: transparent; color: white; padding: 14px 28px; border-radius: 8px;
+    font-weight: 700; font-size: 16px; border: 2px solid rgba(255,255,255,0.6); display: inline-block;
+  }
+
+  /* Footer */
+  footer { background: #17242F; color: #9fb3c2; padding: 40px 24px 24px; font-size: 14px; }
+  .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24px; margin-bottom: 24px; }
+  .footer-logo { color: white; font-weight: 800; font-size: 18px; margin-bottom: 8px; }
+  .footer-bottom { border-top: 1px solid #2a3d4a; padding-top: 18px; font-size: 12.5px; text-align: center; color: #6b8294; }
+
+  @media (max-width: 860px) {
+    nav ul { display: none; }
+    .nav-phone { display: none; }
+    .services-grid { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 30px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="tel:0494725014">📞 0494 725 014</a>
+  <span class="hours">Mon–Sat · 7am–6pm AEST</span>
+</div>
+
+<header>
+  <div class="nav-wrap">
+    <div class="logo">Sunshine <span>Surveyors</span></div>
+    <nav>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#area">Service Area</a></li>
+        <li><a href="#why-us">Why Us</a></li>
+      </ul>
+    </nav>
+    <span class="nav-phone">📞 <a href="tel:0494725014">0494 725 014</a></span>
+    <a href="#quote" class="nav-cta">Get a Quote</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-badge">☀ LOCAL TO BRIMBANK & MELBOURNE'S WEST</div>
+      <h1>Drone Mapping & Construction Surveys, Booked Fast — No Chasing Required</h1>
+      <p class="sub">Sunshine Surveyors delivers topographic surveys, aerial drone mapping, and construction set-out/staking for builders, developers, and engineers across Melbourne's western suburbs. Quote requests answered within 24 hours.</p>
+      <div class="hero-ctas">
+        <a href="#quote" class="btn-primary">Request a Quote</a>
+        <a href="#services" class="btn-secondary">View Services</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card"><div class="num">24hr</div><div class="label">Quote turnaround</div></div>
+      <div class="stat-card"><div class="num">Local</div><div class="label">Based in Brimbank</div></div>
+      <div class="stat-card"><div class="num">Drone</div><div class="label">RTK-enabled tech</div></div>
+      <div class="stat-card"><div class="num">Fixed</div><div class="label">Upfront pricing</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  Servicing Sunshine · St Albans · Deer Park · Sydenham · Keilor · Cairnlea · Delahey · Ravenhall — and greater western Melbourne
+</div>
+
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">What We Do</div>
+      <h2>Survey & Mapping Services</h2>
+      <p>Precise, fast turnaround services for residential builds, subdivisions, and commercial sites.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🚁</div>
+        <h3>Drone & Aerial Mapping</h3>
+        <p>High-resolution aerial capture for site planning, progress tracking, and volumetric analysis.</p>
+        <ul>
+          <li>Orthomosaic & 3D site models</li>
+          <li>Stockpile & cut/fill volume reports</li>
+          <li>Progress monitoring for builders</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📐</div>
+        <h3>Topographic Surveys</h3>
+        <p>Detailed ground-level data for design, drainage, and engineering plans.</p>
+        <ul>
+          <li>Contours & digital terrain models</li>
+          <li>Feature & level surveys</li>
+          <li>Fast delivery for design teams</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📍</div>
+        <h3>Construction Staking & Set-Out</h3>
+        <p>On-site marking so builders and contractors can start work with confidence.</p>
+        <ul>
+          <li>Building & structure set-out</li>
+          <li>Slab, footing & pier marking</li>
+          <li>As-built verification surveys</li>
+        </ul>
+      </div>
+    </div>
+    <div class="scope-note">
+      <strong>Please note:</strong> Sunshine Surveyors provides drone mapping, topographic, and construction set-out/as-built services only. We do not perform legal boundary/title (cadastral) surveys, which in Victoria can only be carried out by a Licensed Surveyor registered with the Surveyors Registration Board of Victoria. Need a boundary survey? Ask us for a referral.
+    </div>
+  </div>
+</section>
+
+<section class="section how-it-works" id="how-it-works">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Simple Process</div>
+      <h2>How It Works</h2>
+      <p>No back-and-forth. Send your job details and we handle the rest.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Send Job Details</h4>
+        <p>Submit your address, site size, and what you need via the form or phone.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Get a Fixed Quote</h4>
+        <p>We reply within 24 hours with a clear price — no hidden costs.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>We Book You In</h4>
+        <p>Choose a time that suits your project timeline.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>Receive Your Data</h4>
+        <p>Get your survey, maps, or set-out marks — fast, accurate, ready to use.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section area-section" id="area">
+  <div class="container">
+    <div class="area-text">
+      <div class="section-header" style="text-align:left; margin-bottom:20px;">
+        <div class="eyebrow">Service Area</div>
+        <h2>Based in Brimbank, Working Across the West</h2>
+      </div>
+      <p style="color:var(--grey); margin-bottom:16px;">Sunshine Surveyors is based locally in Melbourne's western suburbs, meaning faster site visits and lower travel costs passed on to you compared to CBD-based survey firms.</p>
+    </div>
+    <div class="area-list">
+      <span class="area-chip">Sunshine</span>
+      <span class="area-chip">St Albans</span>
+      <span class="area-chip">Deer Park</span>
+      <span class="area-chip">Sydenham</span>
+      <span class="area-chip">Keilor</span>
+      <span class="area-chip">Cairnlea</span>
+      <span class="area-chip">Delahey</span>
+      <span class="area-chip">Ravenhall</span>
+      <span class="area-chip">Caroline Springs</span>
+      <span class="area-chip">Sunshine North</span>
+      <span class="area-chip">Sunshine West</span>
+      <span class="area-chip">Derrimut</span>
+      <span class="area-chip">Ardeer</span>
+      <span class="area-chip">Albion</span>
+      <span class="area-chip">Keilor Downs</span>
+      <span class="area-chip">Taylors Lakes</span>
+      <span class="area-chip">Hillside</span>
+      <span class="area-chip">+ Greater Melbourne West</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="why-us" style="background:#FAFAFA;">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Why Sunshine Surveyors</div>
+      <h2>Built for Builders Who Can't Wait Around</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-icon">⚡</div>
+        <div><h4>Fast Response</h4><p>Quotes within 24 hours — no waiting a week to find out if we can fit your job in.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">💰</div>
+        <div><h4>Transparent Pricing</h4><p>Fixed quotes upfront based on site size and scope. No surprise invoices.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">📍</div>
+        <div><h4>Genuinely Local</h4><p>Based in Brimbank — we know the area, the councils, and the sites.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">🛠️</div>
+        <div><h4>Built for Trades</h4><p>We work around your site schedule, not the other way around.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section quote-section" id="quote">
+  <div class="container quote-wrap">
+    <div class="quote-info">
+      <h2>Request a Quote</h2>
+      <p>Tell us about your site and we'll come back to you within 24 hours with a fixed price and available dates.</p>
+      <div class="contact-row">📞 0494 725 014</div>
+      <div class="contact-row">✉️ info@sunshinesurveyors.com.au</div>
+      <div class="contact-row">📍 Servicing Brimbank & Melbourne's West, VIC</div>
+      <div class="contact-row" style="font-size:13px; color:#9fb3c2;">Sunshine Surveyors is a trading name of Brimbank Spatial (ABN 34 697 779 856)</div>
+    </div>
+    <form class="quote-form" name="quote-request" method="POST" data-netlify="true" netlify-honeypot="website">
+      <input type="hidden" name="form-name" value="quote-request">
+      <h3>Get Your Fixed Quote</h3>
+      <div class="form-row">
+        <label>Full Name</label>
+        <input type="text" name="full_name" placeholder="Your name" required>
+      </div>
+      <div class="form-row">
+        <label>Phone or Email</label>
+        <input type="text" name="contact" placeholder="Best way to reach you" required>
+      </div>
+      <div class="form-row">
+        <label>Site Address / Suburb</label>
+        <input type="text" name="site_address" placeholder="e.g. Sunshine North, VIC" required>
+      </div>
+      <div class="form-row">
+        <label>Service(s) Needed — select all that apply</label>
+        <div class="checkbox-group">
+          <label class="checkbox-option"><input type="checkbox" name="service" value="drone"> Drone / Aerial Mapping</label>
+          <label class="checkbox-option"><input type="checkbox" name="service" value="topo"> Topographic Survey</label>
+          <label class="checkbox-option"><input type="checkbox" name="service" value="staking"> Construction Staking / Set-Out</label>
+          <label class="checkbox-option"><input type="checkbox" name="service" value="asbuilt"> As-Built Survey</label>
+          <label class="checkbox-option"><input type="checkbox" name="service" value="unsure"> Not Sure — Advise Me</label>
+        </div>
+      </div>
+      <div class="form-row">
+        <label>Job Details</label>
+        <textarea name="job_details" placeholder="Site size, timeline, and anything else useful"></textarea>
+      </div>
+      <p style="display:none;">
+        <label>Don't fill this out if you're human: <input name="website" tabindex="-1" autocomplete="off"></label>
+      </p>
+      <button class="form-submit" type="submit">Submit Request</button>
+      <div class="form-note">We'll respond within 24 hours with a fixed quote.</div>
+      <div class="form-secure">🔒 100% secure — we never share your details.</div>
+    </form>
+  </div>
+</section>
+
+<section class="closing-cta">
+  <div class="container">
+    <h2>Ready to get your site surveyed?</h2>
+    <p>Fill out the form above or call now — we'll come back with a fixed quote within 24 hours.</p>
+    <div class="closing-ctas">
+      <a href="#quote" class="btn-white">Request Free Quote</a>
+      <a href="tel:0494725014" class="btn-outline-white">📞 0494 725 014</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Sunshine Surveyors</div>
+      <p style="max-width:320px;">Local drone mapping, topographic, and construction set-out surveys across Brimbank and Melbourne's west.</p>
+    </div>
+    <div>
+      <div style="color:white; font-weight:700; margin-bottom:8px;">Services</div>
+      <p>Drone & Aerial Mapping</p>
+      <p>Topographic Surveys</p>
+      <p>Construction Staking</p>
+      <p>As-Built Surveys</p>
+    </div>
+    <div>
+      <div style="color:white; font-weight:700; margin-bottom:8px;">Contact</div>
+      <p>0494 725 014</p>
+      <p>info@sunshinesurveyors.com.au</p>
+      <p>Brimbank, VIC</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Sunshine Surveyors — a trading name of Brimbank Spatial (ABN 34 697 779 856). Not a licensed cadastral surveying service; boundary/title surveys are referred to a Licensed Surveyor.
+  </div>
+</footer>
+
+</body>
+</html>
