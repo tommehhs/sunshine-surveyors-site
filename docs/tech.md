@@ -27,9 +27,15 @@ If either domain lapses: the site or the email stops working, and the phone/emai
 - Tommy may redo domains and email.
 
 ## Phone
-- Public number: 0494 725 014 (Aldi Mobile prepaid SIM, Telstra network — from earlier planning; unverified that this is the same number).
-- The prepaid must be kept active, or the number can be recycled.
-- Planned: iPhone Live Voicemail now; Twilio call diversion and transcription later.
+- Public number on the site: 0494 725 014. Whether this is the Aldi Mobile prepaid SIM below: unverified.
+- **Plan from July 2026** (chat: "Business phone numbers for lead generation"):
+  - Spare Aldi Mobile prepaid SIM (Telstra network) as a zero-cost launch number.
+  - Keep the prepaid active, or the number can be recycled.
+  - Trade-off noted: an 04 mobile number vs a local 03 number for hyperlocal SEO and Google Business Profile.
+  - Tommy doesn't want to answer calls yet, so: iPhone Live Voicemail now (free, iOS 18+).
+  - Later: divert all calls from the Aldi SIM (code given in the chat: `21*[number]*10#`; cancel with `#002#` — confirm with Aldi before relying on it) to a Twilio number that records, transcribes and logs the lead.
+  - For per-lead billing to partners, call tracking (WildJar, Delacon or Twilio) gives proof of each call.
+- Which phone the Aldi SIM is in: never answered (open).
 
 ## Not built yet (from the July spec)
 Next.js App Router, Tailwind, Supabase, Vercel. See `archive/build-spec-v1-summary.md`.

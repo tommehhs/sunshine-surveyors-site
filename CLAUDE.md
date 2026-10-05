@@ -19,7 +19,8 @@ Chats are disposable; this folder is not. If something important is decided or l
 | `docs/people.md` | Partners, prospects, contacts (business info only) |
 | `docs/decisions/NNNN-*.md` | One file per decision: date, context, decision, why |
 | `docs/research/` | Competitor and market notes |
-| `docs/archive/` | Superseded material kept for reference |
+| `docs/archive/` | Superseded material kept for reference (incl. full July build spec) |
+| `docs/sources.md` | Which chats and accounts the knowledge came from |
 | `CHANGELOG.md` | One line per session: date — what changed |
 | `site/` | The live website. **Only this folder is published** (see `netlify.toml`). |
 

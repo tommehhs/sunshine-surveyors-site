@@ -2,7 +2,7 @@
 
 **Status: not built.** Superseded in practice by the one-page site launched 2026-07-07, which took a different direction (own services, no cadastral). Kept for reference in case direction B or C is chosen (see `../roadmap.md`).
 
-The full spec was written in a Claude chat ("Launching Sunshine Surveyors trading name") as `sunshine-surveyors-build-spec.md`. If you have that file, save it next to this one as `build-spec-v1.md`.
+The full spec is in `build-spec-v1.md` next to this file (recovered from the original chat on 2026-10-05).
 
 ## Model
 Capture local search intent → qualified enquiry → route to a licensed partner (SMC Land Surveyors; backup Prime Land Consultants). All marketing attributes regulated work to the registered licensee.
