@@ -1,6 +1,6 @@
-# Static site — no build step. Netlify publishes the repo root.
+# Static site — no build step. Netlify publishes ONLY the site/ folder (docs stay private to the repo).
 [build]
-  publish = "."
+  publish = "site"
 
 # Send www and the netlify.app address to the main domain
 [[redirects]]
