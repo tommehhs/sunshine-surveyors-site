@@ -5,17 +5,44 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sunshine Surveyors | Drone Mapping, Topographic & Construction Set-Out Surveys | Brimbank & Western Melbourne</title>
 <meta name="description" content="Fast, local drone mapping, topographic surveys, and construction set-out/staking across Brimbank and Melbourne's western suburbs. Quotes within 24 hours.">
+<link rel="canonical" href="https://sunshinesurveyors.au/">
+<meta name="theme-color" content="#1B4F72">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231B4F72'/%3E%3Ccircle cx='32' cy='34' r='12' fill='%23F5A623'/%3E%3Cpath d='M32 10v8M14 34H8M56 34h-6M19 21l-4-4M45 21l4-4' stroke='%23F5A623' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_AU">
+<meta property="og:site_name" content="Sunshine Surveyors">
+<meta property="og:url" content="https://sunshinesurveyors.au/">
+<meta property="og:title" content="Sunshine Surveyors | Drone Mapping & Construction Surveys in Melbourne's West">
+<meta property="og:description" content="Drone mapping, topographic surveys and construction set-out across Brimbank and western Melbourne. Fixed quotes within 24 hours.">
+<meta name="twitter:card" content="summary">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "ProfessionalService",
+  "@id": "https://sunshinesurveyors.au/#business",
   "name": "Sunshine Surveyors",
   "alternateName": "Brimbank Spatial",
+  "url": "https://sunshinesurveyors.au/",
   "description": "Drone mapping, topographic survey, and construction set-out/as-built services across Brimbank and Melbourne's western suburbs.",
   "areaServed": ["Sunshine", "St Albans", "Deer Park", "Sydenham", "Keilor", "Cairnlea", "Delahey", "Ravenhall", "Caroline Springs", "Sunshine North", "Sunshine West", "Derrimut", "Ardeer", "Albion", "Keilor Downs", "Keilor Park", "Kealba", "Kings Park", "Taylors Lakes", "Albanvale", "Hillside"],
   "address": { "@type": "PostalAddress", "addressLocality": "Brimbank", "addressRegion": "VIC", "addressCountry": "AU" },
-  "telephone": "+61 494 725 014",
+  "telephone": "+61494725014",
   "email": "info@sunshinesurveyors.com.au",
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "07:00", "closes": "18:00"
+  }],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Survey & Mapping Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Drone & Aerial Mapping" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Topographic Surveys" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Construction Staking & Set-Out" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "As-Built Surveys" } }
+    ]
+  },
   "priceRange": "$$"
 }
 </script>
@@ -222,40 +249,118 @@
   .footer-logo { color: white; font-weight: 800; font-size: 18px; margin-bottom: 8px; }
   .footer-bottom { border-top: 1px solid #2a3d4a; padding-top: 18px; font-size: 12.5px; text-align: center; color: #6b8294; }
 
+  /* Accessibility helpers */
+  html { scroll-behavior: smooth; }
+  section[id] { scroll-margin-top: 80px; }
+  .skip-link {
+    position: absolute; left: -9999px; top: 8px; background: var(--sun-orange); color: white;
+    padding: 10px 16px; border-radius: 6px; font-weight: 700; z-index: 200;
+  }
+  .skip-link:focus { left: 8px; }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 3px solid var(--sun-yellow); outline-offset: 2px;
+  }
+  .form-row input:focus, .form-row textarea:focus { border-color: var(--sky-blue); }
+  .visually-hidden {
+    position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+  }
+  .contact-row a { color: white; text-decoration: underline; text-underline-offset: 3px; }
+  footer a:hover { color: white; }
+  fieldset.form-row { border: none; }
+  fieldset.form-row legend { font-size: 13px; font-weight: 700; margin-bottom: 6px; color: var(--charcoal); }
+
+  /* Form states */
+  .form-submit:disabled { opacity: 0.7; cursor: progress; }
+  .form-status { display: none; margin-top: 12px; padding: 12px 14px; border-radius: 7px; font-size: 14px; }
+  .form-status.error { display: block; background: #FEF2F2; color: #991B1B; border: 1px solid #FECACA; }
+  .form-success { display: none; text-align: center; padding: 24px 8px; }
+  .form-success .tick {
+    width: 56px; height: 56px; border-radius: 50%; background: #DCFCE7; color: #166534; font-size: 28px;
+    display: flex; align-items: center; justify-content: center; margin: 0 auto 14px;
+  }
+  .form-success h3 { margin-bottom: 8px; }
+  .form-success p { color: var(--grey); font-size: 15px; }
+  .quote-form.sent .form-fields { display: none; }
+  .quote-form.sent .form-success { display: block; }
+
+  /* Mobile menu */
+  .menu-toggle {
+    display: none; background: none; border: 1px solid #ddd; border-radius: 6px; padding: 8px 10px;
+    font-size: 15px; font-weight: 700; color: var(--sky-blue); cursor: pointer; margin-right: 10px;
+  }
+  .nav-right { display: flex; align-items: center; }
+
+  /* Sticky call bar on phones */
+  .mobile-callbar { display: none; }
+
   @media (max-width: 860px) {
-    nav ul { display: none; }
+    .menu-toggle { display: inline-block; }
+    nav ul {
+      display: none; position: absolute; top: 100%; left: 0; right: 0; background: white;
+      flex-direction: column; gap: 0; border-bottom: 1px solid #eee; box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+    nav ul.open { display: flex; }
+    nav li a { display: block; padding: 14px 24px; border-top: 1px solid #f2f2f2; }
     .nav-phone { display: none; }
     .services-grid { grid-template-columns: 1fr; }
     .steps { grid-template-columns: 1fr 1fr; }
     .why-grid { grid-template-columns: 1fr; }
+    .hero { padding: 56px 20px 64px; }
     .hero h1 { font-size: 30px; }
+    .section { padding: 56px 20px; }
+    .quote-form { padding: 24px 20px; }
+    .mobile-callbar {
+      display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 150; background: white;
+      border-top: 1px solid #e5e7eb; box-shadow: 0 -4px 16px rgba(0,0,0,0.08);
+      padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); gap: 10px;
+    }
+    .mobile-callbar a { flex: 1; text-align: center; padding: 12px; border-radius: 8px; font-weight: 700; font-size: 15px; }
+    .mobile-callbar .call { background: var(--sky-blue); color: white; }
+    .mobile-callbar .quote { background: var(--sun-orange); color: white; }
+    body { padding-bottom: 72px; }
+  }
+  @media (max-width: 480px) {
+    .steps { grid-template-columns: 1fr; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+    .nav-cta { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .service-card { transition: none; }
+    .service-card:hover { transform: none; }
   }
 </style>
 </head>
 <body>
 
+<a href="#main" class="skip-link">Skip to content</a>
+
 <div class="topbar">
-  <a href="tel:0494725014">📞 0494 725 014</a>
-  <span class="hours">Mon–Sat · 7am–6pm AEST</span>
+  <a href="tel:+61494725014"><span aria-hidden="true">📞 </span>0494 725 014</a>
+  <span class="hours">Mon–Sat · 7am–6pm Melbourne time</span>
 </div>
 
 <header>
   <div class="nav-wrap">
-    <div class="logo">Sunshine <span>Surveyors</span></div>
-    <nav>
-      <ul>
+    <a href="#top" class="logo" aria-label="Sunshine Surveyors home">Sunshine <span>Surveyors</span></a>
+    <nav aria-label="Main">
+      <ul id="nav-menu">
         <li><a href="#services">Services</a></li>
         <li><a href="#how-it-works">How It Works</a></li>
         <li><a href="#area">Service Area</a></li>
         <li><a href="#why-us">Why Us</a></li>
       </ul>
     </nav>
-    <span class="nav-phone">📞 <a href="tel:0494725014">0494 725 014</a></span>
-    <a href="#quote" class="nav-cta">Get a Quote</a>
+    <div class="nav-right">
+      <span class="nav-phone"><span aria-hidden="true">📞 </span><a href="tel:+61494725014">0494 725 014</a></span>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+      <a href="#quote" class="nav-cta">Get a Quote</a>
+    </div>
   </div>
 </header>
 
-<section class="hero">
+<main id="main">
+<section class="hero" id="top">
   <div class="hero-inner">
     <div class="hero-text">
       <div class="hero-badge">☀ LOCAL TO BRIMBANK & MELBOURNE'S WEST</div>
@@ -288,7 +393,7 @@
     </div>
     <div class="services-grid">
       <div class="service-card">
-        <div class="service-icon">🚁</div>
+        <div class="service-icon" aria-hidden="true">🚁</div>
         <h3>Drone & Aerial Mapping</h3>
         <p>High-resolution aerial capture for site planning, progress tracking, and volumetric analysis.</p>
         <ul>
@@ -298,7 +403,7 @@
         </ul>
       </div>
       <div class="service-card">
-        <div class="service-icon">📐</div>
+        <div class="service-icon" aria-hidden="true">📐</div>
         <h3>Topographic Surveys</h3>
         <p>Detailed ground-level data for design, drainage, and engineering plans.</p>
         <ul>
@@ -308,7 +413,7 @@
         </ul>
       </div>
       <div class="service-card">
-        <div class="service-icon">📍</div>
+        <div class="service-icon" aria-hidden="true">📍</div>
         <h3>Construction Staking & Set-Out</h3>
         <p>On-site marking so builders and contractors can start work with confidence.</p>
         <ul>
@@ -396,19 +501,19 @@
     </div>
     <div class="why-grid">
       <div class="why-item">
-        <div class="why-icon">⚡</div>
+        <div class="why-icon" aria-hidden="true">⚡</div>
         <div><h4>Fast Response</h4><p>Quotes within 24 hours — no waiting a week to find out if we can fit your job in.</p></div>
       </div>
       <div class="why-item">
-        <div class="why-icon">💰</div>
+        <div class="why-icon" aria-hidden="true">💰</div>
         <div><h4>Transparent Pricing</h4><p>Fixed quotes upfront based on site size and scope. No surprise invoices.</p></div>
       </div>
       <div class="why-item">
-        <div class="why-icon">📍</div>
+        <div class="why-icon" aria-hidden="true">📍</div>
         <div><h4>Genuinely Local</h4><p>Based in Brimbank — we know the area, the councils, and the sites.</p></div>
       </div>
       <div class="why-item">
-        <div class="why-icon">🛠️</div>
+        <div class="why-icon" aria-hidden="true">🛠️</div>
         <div><h4>Built for Trades</h4><p>We work around your site schedule, not the other way around.</p></div>
       </div>
     </div>
@@ -420,46 +525,65 @@
     <div class="quote-info">
       <h2>Request a Quote</h2>
       <p>Tell us about your site and we'll come back to you within 24 hours with a fixed price and available dates.</p>
-      <div class="contact-row">📞 0494 725 014</div>
-      <div class="contact-row">✉️ info@sunshinesurveyors.com.au</div>
-      <div class="contact-row">📍 Servicing Brimbank & Melbourne's West, VIC</div>
+      <div class="contact-row"><span aria-hidden="true">📞</span> <a href="tel:+61494725014">0494 725 014</a></div>
+      <div class="contact-row"><span aria-hidden="true">✉️</span> <a href="mailto:info@sunshinesurveyors.com.au?subject=Survey%20quote%20request">info@sunshinesurveyors.com.au</a></div>
+      <div class="contact-row"><span aria-hidden="true">📍</span> Servicing Brimbank & Melbourne's West, VIC</div>
       <div class="contact-row" style="font-size:13px; color:#9fb3c2;">Sunshine Surveyors is a trading name of Brimbank Spatial (ABN 34 697 779 856)</div>
     </div>
-    <form class="quote-form" name="quote-request" method="POST" data-netlify="true" netlify-honeypot="website">
+    <form class="quote-form" id="quote-form" name="quote-request" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="website">
       <input type="hidden" name="form-name" value="quote-request">
-      <h3>Get Your Fixed Quote</h3>
-      <div class="form-row">
-        <label>Full Name</label>
-        <input type="text" name="full_name" placeholder="Your name" required>
-      </div>
-      <div class="form-row">
-        <label>Phone or Email</label>
-        <input type="text" name="contact" placeholder="Best way to reach you" required>
-      </div>
-      <div class="form-row">
-        <label>Site Address / Suburb</label>
-        <input type="text" name="site_address" placeholder="e.g. Sunshine North, VIC" required>
-      </div>
-      <div class="form-row">
-        <label>Service(s) Needed — select all that apply</label>
-        <div class="checkbox-group">
-          <label class="checkbox-option"><input type="checkbox" name="service" value="drone"> Drone / Aerial Mapping</label>
-          <label class="checkbox-option"><input type="checkbox" name="service" value="topo"> Topographic Survey</label>
-          <label class="checkbox-option"><input type="checkbox" name="service" value="staking"> Construction Staking / Set-Out</label>
-          <label class="checkbox-option"><input type="checkbox" name="service" value="asbuilt"> As-Built Survey</label>
-          <label class="checkbox-option"><input type="checkbox" name="service" value="unsure"> Not Sure — Advise Me</label>
+      <input type="hidden" name="services_summary" value="">
+      <div class="form-fields">
+        <h3>Get Your Fixed Quote</h3>
+        <div class="form-row">
+          <label for="f-name">Full Name</label>
+          <input type="text" id="f-name" name="full_name" placeholder="Your name" autocomplete="name" required>
         </div>
+        <div class="form-row">
+          <label for="f-contact">Phone or Email</label>
+          <input type="text" id="f-contact" name="contact" placeholder="Best way to reach you" autocomplete="tel" required>
+        </div>
+        <div class="form-row">
+          <label for="f-address">Site Address / Suburb</label>
+          <input type="text" id="f-address" name="site_address" placeholder="e.g. Sunshine North, VIC" autocomplete="street-address" required>
+        </div>
+        <fieldset class="form-row">
+          <legend>Service(s) Needed — select all that apply</legend>
+          <div class="checkbox-group">
+            <label class="checkbox-option"><input type="checkbox" name="service" value="Drone / Aerial Mapping"> Drone / Aerial Mapping</label>
+            <label class="checkbox-option"><input type="checkbox" name="service" value="Topographic Survey"> Topographic Survey</label>
+            <label class="checkbox-option"><input type="checkbox" name="service" value="Construction Staking / Set-Out"> Construction Staking / Set-Out</label>
+            <label class="checkbox-option"><input type="checkbox" name="service" value="As-Built Survey"> As-Built Survey</label>
+            <label class="checkbox-option"><input type="checkbox" name="service" value="Not sure - advise me"> Not Sure — Advise Me</label>
+          </div>
+        </fieldset>
+        <div class="form-row">
+          <label for="f-when">When do you need it?</label>
+          <select id="f-when" name="timeline">
+            <option value="">Select a timeframe</option>
+            <option>ASAP (this week)</option>
+            <option>Within 2 weeks</option>
+            <option>Within a month</option>
+            <option>Just planning / budgeting</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="f-details">Job Details</label>
+          <textarea id="f-details" name="job_details" placeholder="Site size, what the data is for, and anything else useful"></textarea>
+        </div>
+        <p class="visually-hidden" aria-hidden="true">
+          <label>Don't fill this out if you're human: <input name="website" tabindex="-1" autocomplete="off"></label>
+        </p>
+        <button class="form-submit" type="submit">Submit Request</button>
+        <div class="form-status" role="alert"></div>
+        <div class="form-note">We'll respond within 24 hours with a fixed quote.</div>
+        <div class="form-secure"><span aria-hidden="true">🔒</span> Your details are only used to quote your job — never shared.</div>
       </div>
-      <div class="form-row">
-        <label>Job Details</label>
-        <textarea name="job_details" placeholder="Site size, timeline, and anything else useful"></textarea>
+      <div class="form-success" tabindex="-1">
+        <div class="tick" aria-hidden="true">✓</div>
+        <h3>Thanks — request received</h3>
+        <p>We'll be in touch within 24 hours with a fixed quote. Need it sooner? Call <a href="tel:+61494725014" style="color:var(--sky-blue); font-weight:700;">0494 725 014</a>.</p>
       </div>
-      <p style="display:none;">
-        <label>Don't fill this out if you're human: <input name="website" tabindex="-1" autocomplete="off"></label>
-      </p>
-      <button class="form-submit" type="submit">Submit Request</button>
-      <div class="form-note">We'll respond within 24 hours with a fixed quote.</div>
-      <div class="form-secure">🔒 100% secure — we never share your details.</div>
     </form>
   </div>
 </section>
@@ -470,10 +594,11 @@
     <p>Fill out the form above or call now — we'll come back with a fixed quote within 24 hours.</p>
     <div class="closing-ctas">
       <a href="#quote" class="btn-white">Request Free Quote</a>
-      <a href="tel:0494725014" class="btn-outline-white">📞 0494 725 014</a>
+      <a href="tel:+61494725014" class="btn-outline-white"><span aria-hidden="true">📞 </span>0494 725 014</a>
     </div>
   </div>
 </section>
+</main>
 
 <footer>
   <div class="footer-inner">
@@ -490,15 +615,74 @@
     </div>
     <div>
       <div style="color:white; font-weight:700; margin-bottom:8px;">Contact</div>
-      <p>0494 725 014</p>
-      <p>info@sunshinesurveyors.com.au</p>
+      <p><a href="tel:+61494725014">0494 725 014</a></p>
+      <p><a href="mailto:info@sunshinesurveyors.com.au">info@sunshinesurveyors.com.au</a></p>
       <p>Brimbank, VIC</p>
     </div>
   </div>
   <div class="footer-bottom">
-    &copy; 2026 Sunshine Surveyors — a trading name of Brimbank Spatial (ABN 34 697 779 856). Not a licensed cadastral surveying service; boundary/title surveys are referred to a Licensed Surveyor.
+    &copy; <span id="year">2026</span> Sunshine Surveyors — a trading name of Brimbank Spatial (ABN 34 697 779 856). Not a licensed cadastral surveying service; boundary/title surveys are referred to a Licensed Surveyor.
   </div>
 </footer>
+
+<div class="mobile-callbar">
+  <a href="tel:+61494725014" class="call">Call now</a>
+  <a href="#quote" class="quote">Get a quote</a>
+</div>
+
+<script>
+(function () {
+  // Mobile menu
+  var toggle = document.querySelector('.menu-toggle');
+  var menu = document.getElementById('nav-menu');
+  if (toggle && menu) {
+    toggle.addEventListener('click', function () {
+      var open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') { menu.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
+    });
+  }
+
+  var year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
+
+  // Quote form: submit to Netlify without leaving the page; falls back to /thanks.html without JS
+  var form = document.getElementById('quote-form');
+  if (!form || !window.fetch) return;
+  var status = form.querySelector('.form-status');
+  var button = form.querySelector('.form-submit');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    status.className = 'form-status';
+    status.textContent = '';
+
+    var picked = Array.prototype.map.call(form.querySelectorAll('input[name="service"]:checked'), function (c) { return c.value; });
+    form.elements['services_summary'].value = picked.join(', ');
+
+    button.disabled = true;
+    button.textContent = 'Sending…';
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form)).toString()
+    }).then(function (res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      form.classList.add('sent');
+      form.querySelector('.form-success').focus();
+      if (typeof window.gtag === 'function') window.gtag('event', 'generate_lead', { form: 'quote-request' });
+    }).catch(function () {
+      status.className = 'form-status error';
+      status.innerHTML = 'Sorry, that didn’t send. Please call <a href="tel:+61494725014">0494 725 014</a> or email <a href="mailto:info@sunshinesurveyors.com.au">info@sunshinesurveyors.com.au</a>.';
+      button.disabled = false;
+      button.textContent = 'Submit Request';
+    });
+  });
+})();
+</script>
 
 </body>
 </html>

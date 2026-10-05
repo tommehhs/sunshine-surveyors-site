@@ -1,0 +1,23 @@
+# Static site — no build step. Netlify publishes ONLY the site/ folder (docs stay private to the repo).
+[build]
+  publish = "site"
+
+# Send www and the netlify.app address to the main domain
+[[redirects]]
+  from = "https://www.sunshinesurveyors.au/*"
+  to = "https://sunshinesurveyors.au/:splat"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
